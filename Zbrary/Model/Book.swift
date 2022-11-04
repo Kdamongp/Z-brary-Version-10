@@ -12,4 +12,5 @@ struct Book: Codable,Identifiable,Hashable {
     var author: String
     var title: String
     var genre: String
+    var isbn: String
 }

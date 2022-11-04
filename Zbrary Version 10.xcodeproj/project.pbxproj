@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		963CA51428D5E7CB00C9D353 /* ExpectationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CA51328D5E7CB00C9D353 /* ExpectationView.swift */; };
+		963CA51428D5E7CB00C9D353 /* FeaturedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CA51328D5E7CB00C9D353 /* FeaturedView.swift */; };
 		963CA51628D5EAFD00C9D353 /* ProcedureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CA51528D5EAFD00C9D353 /* ProcedureView.swift */; };
 		963CA51828D5EC2700C9D353 /* ResearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963CA51728D5EC2700C9D353 /* ResearchView.swift */; };
 		96580EDF29155622002C38D9 /* IMG_0089.MOV in Resources */ = {isa = PBXBuildFile; fileRef = 96580EDE29155622002C38D9 /* IMG_0089.MOV */; };
@@ -36,7 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		963CA51328D5E7CB00C9D353 /* ExpectationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpectationView.swift; sourceTree = "<group>"; };
+		963CA51328D5E7CB00C9D353 /* FeaturedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedView.swift; sourceTree = "<group>"; };
 		963CA51528D5EAFD00C9D353 /* ProcedureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcedureView.swift; sourceTree = "<group>"; };
 		963CA51728D5EC2700C9D353 /* ResearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResearchView.swift; sourceTree = "<group>"; };
 		96580EDE29155622002C38D9 /* IMG_0089.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = IMG_0089.MOV; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				9678365F2890909400BDBFE8 /* ZbraryApp.swift */,
 				967836612890909400BDBFE8 /* ContentView.swift */,
 				967836792890910900BDBFE8 /* HomeView.swift */,
-				963CA51328D5E7CB00C9D353 /* ExpectationView.swift */,
+				963CA51328D5E7CB00C9D353 /* FeaturedView.swift */,
 				963CA51528D5EAFD00C9D353 /* ProcedureView.swift */,
 				96580EE029155794002C38D9 /* ProcedureVideoView.swift */,
 				96783670289090FE00BDBFE8 /* FindView.swift */,
@@ -234,7 +234,7 @@
 				96783675289090FE00BDBFE8 /* EmojiRatingView.swift in Sources */,
 				967836602890909400BDBFE8 /* ZbraryApp.swift in Sources */,
 				96580EE129155794002C38D9 /* ProcedureVideoView.swift in Sources */,
-				963CA51428D5E7CB00C9D353 /* ExpectationView.swift in Sources */,
+				963CA51428D5E7CB00C9D353 /* FeaturedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

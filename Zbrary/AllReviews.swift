@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct AllReviews: View {
-    var book: Book = Book(id: UUID(), author: "Dr. Seuss", title: "Green Eggs and Ham", genre: "Everyone")
+    var book: Book = Book(id: UUID(), author: "Dr. Seuss", title: "Green Eggs and Ham", genre: "Everyone", isbn: "0385472579")
     var reviews: [Review] = [Review(id: UUID(), review: "It was good.", rating: 4, book: ["ID":"1"])]
     @State private var showingAddScreen = false
 

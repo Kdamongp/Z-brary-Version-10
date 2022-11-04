@@ -58,9 +58,9 @@ struct ContentView: View {
                         Label("Home", systemImage: "house")
                     }
                 
-                ExpectationView()
+                FeaturedView()
                     .tabItem {
-                        Label("Expectations", systemImage: "person.fill.checkmark")
+                        Label("Featured Books", systemImage: "bookmark.square")
                     }
                 
                 ProcedureView()

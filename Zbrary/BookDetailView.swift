@@ -10,7 +10,9 @@ import SwiftUI
 struct BookDetailView: View {
     
     var book: Book
-    @State var reviews = [Review(id: UUID(), review: "This is a boring book", rating: 1, book: ["bookID":"1"])]
+    @State var reviews = [Review(id: UUID(), review: "This is a boring book", rating: 1, book: ["bookID":"1"]),
+                          Review(id: UUID(), review: "This is a good book", rating: 4, book: ["bookID":"2"])
+    ]
     var body: some View {
         ScrollView {
             Group {
@@ -21,16 +23,29 @@ struct BookDetailView: View {
                         }
                         .padding(50)
                     }
-                    
-                    Image("bluebook")
-                        .resizable()
-                        .scaledToFit()
-                        .overlay(Text(book.title), alignment: .center)
-                        .padding(6)
-                        .foregroundColor(.white)
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(.white)
-                        .font(.title)
+                    //                    ZStack {
+                    //                        Image("bluebook")
+                    //                            .resizable()
+                    //                            .frame(width:400)
+                    //                            .aspectRatio(contentMode: .fit)
+                    //                        Text(book.title)
+                    //                            .lineLimit(nil)
+                    //                            .foregroundColor(.white)
+                    //                            .multilineTextAlignment(.center)
+                    //                            .foregroundColor(.white)
+                    //                            .font(.title)
+                    //                    }
+                    AsyncImage(url: URL(string: "https://covers.openlibrary.org/b/isbn/\(book.isbn)-M.jpg?default=false")) { image in
+                        image.resizable()
+                            .aspectRatio(contentMode: .fit)
+                    } placeholder: {
+                        Image ("bluebook")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 400)
+                    }
+                    .frame(width: 400)
+                    .aspectRatio(contentMode: .fit)
                     
                     Text(book.title)
                         .font(.title)
@@ -40,37 +55,28 @@ struct BookDetailView: View {
                     Text(book.author)
                         .foregroundColor(.red)
                     
-                    List {
+                   Divider()
                         ForEach(reviews, id: \.id) { review in
                             VStack{
-                      
-                                    VStack(alignment: .leading) {
-                                        Spacer()
-                                        EmojiRatingView(rating: Int16(review.rating))
-                                        HStack {
-                                        Text("Title:")
-                                        Text(book.title)
-                                            .font(.headline)
-                                        }
-                                        HStack {
-                                        Text("written by")
-                                            .padding(.leading)
-                                        Text(book.author)
-                                            .foregroundColor(.secondary)
-                                        }
-                                    }
+                                
+                                VStack(alignment: .leading) {
+                                    Spacer()
+                                    EmojiRatingView(rating: Int16(review.rating))
+                                    
+                                }
                                 HStack {
                                     Text("\"")
                                     Text(review.review)
                                     Text("\"")
                                     Spacer()
                                 }
+                    Divider()
                             }
-    
-                            }
+                            
                         }
-                    
                    
+                    
+                    
                 }
                 
                 

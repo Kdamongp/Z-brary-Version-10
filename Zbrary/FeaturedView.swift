@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ExpectationView: View {
+struct FeaturedView: View {
     var body: some View {
         ZStack {
         Image ("Paper2")
@@ -28,6 +28,6 @@ struct ExpectationView: View {
 
 struct ExpectationView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpectationView()
+        FeaturedView()
     }
 }
