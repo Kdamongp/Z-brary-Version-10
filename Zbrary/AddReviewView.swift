@@ -10,28 +10,24 @@ import SwiftUI
 struct AddReviewView: View {
     @Environment(\.dismiss) var dismiss
 
-    @State private var title = ""
-    @State private var author = ""
     @State private var rating = 3
-    @State private var genre = ""
     @State private var review = ""
     
-    @StateObject var library = ReadData()
     var book: Book
-    let genres = ["Non Fiction", "Fiction", "Everyone", "Adventure", "Humor", "Mystery", "Scary","Series","Science Fiction/Fantasy","Biography"]
 
     var body: some View {
        
-        NavigationView {
-        
+        VStack {
             Text(book.title)
             Text(book.author)
             Text(book.genre)
-                     
-                
+         
             Form {
                 Section {
-                    TextField("Add your review", text: $review)
+//                    TextField("Add your review", text: $review)
+//                        .autocorrectionDisabled()
+                   
+                TextEditor(text: $review)
                     RatingView(rating: $rating)
                 } header: {
                     Text("Write a review")
@@ -45,7 +41,7 @@ struct AddReviewView: View {
                         dismiss()
                     }
                 }
-            .disabled(title.isEmpty || genre.isEmpty || author.isEmpty || review.count < 10)
+         
             }
             .navigationTitle("Add Book")
         }
