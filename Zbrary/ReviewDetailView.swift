@@ -10,7 +10,7 @@ import SwiftUI
 struct ReviewDetailView: View {
     let book: Book
 
-    @Environment(\.managedObjectContext) var moc
+  
     @Environment(\.dismiss) var dismiss
     @State private var showingDeleteAlert = false
 
@@ -22,7 +22,7 @@ struct ReviewDetailView: View {
                     .resizable()
                     .scaledToFit()
 
-                Text(book.genre?.uppercased() ?? "FANTASY")
+                Text(book.genre.uppercased() ?? "FANTASY")
                     .font(.caption)
                     .fontWeight(.black)
                     .padding(8)
@@ -36,11 +36,11 @@ struct ReviewDetailView: View {
                 .font(.title)
                 .foregroundColor(.secondary)
 
-            Text(book.review ?? "No review")
-                .padding()
+//            Text(book.review ?? "No review")
+//                .padding()
 
-            RatingView(rating: .constant(Int(book.rating)))
-                .font(.largeTitle)
+//            RatingView(rating: .constant(Int(book.rating)))
+//                .font(.largeTitle)
         }
         .navigationTitle(book.title ?? "Unknown Book")
         .navigationBarTitleDisplayMode(.inline)
@@ -60,8 +60,7 @@ struct ReviewDetailView: View {
     }
     
     func deleteBook() {
-        moc.delete(book)
-
+      
 //        try? moc.save()
         dismiss()
     }

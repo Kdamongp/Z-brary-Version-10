@@ -9,9 +9,9 @@ import SwiftUI
 
 
 struct LibraryInventory: View {
-    @StateObject var library = ReadData()
+    @State var library = DataService.shared.allBooks
     @State private var searchText = ""
-    @State var filteredLibrary = ReadData().collection
+    @State var filteredLibrary = DataService.shared.allBooks
     
     var body: some View {
         
@@ -36,7 +36,7 @@ struct LibraryInventory: View {
                     LazyVStack{
                         ForEach(filteredLibrary, id:\.id) { book in
                             NavigationLink {
-                                InventoryBookView()
+                                BookDetailView(book: book)
                             } label: {
                                 VStack {
                                     HStack {
@@ -83,9 +83,9 @@ struct LibraryInventory: View {
     }
     func search () {
         if searchText.isEmpty {
-            filteredLibrary = library.collection
+            filteredLibrary = library
         } else {
-            filteredLibrary = library.collection.filter {
+            filteredLibrary = library.filter {
                 $0.title.localizedCaseInsensitiveContains(searchText) ||
                 $0.author.localizedCaseInsensitiveContains(searchText)
             }

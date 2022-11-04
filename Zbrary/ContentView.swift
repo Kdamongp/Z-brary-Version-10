@@ -10,13 +10,7 @@ import CoreData
 
 struct ContentView: View {
     
-    
-    @Environment(\.managedObjectContext) var moc
-    
-    @FetchRequest(sortDescriptors: [
-        SortDescriptor(\.title),
-        SortDescriptor(\.author)
-    ]) var books: FetchedResults<Book>
+   
     
     //        @State private var showingAddScreen = false
     
@@ -84,17 +78,15 @@ struct ContentView: View {
                         Label("Research Sites", systemImage: "books.vertical.circle")
                     }
                 
-                ReviewView()
-                    .tabItem {
-                        Label("Read Reviews", systemImage: "square.and.pencil")
-                    }
-                
                 LibraryInventory()
                     .tabItem {
                         Label("Add Reviews", systemImage: "rectangle.and.text.magnifyingglass")
                     }
                 
-               
+                AllReviews()
+                    .tabItem {
+                        Label("Read Reviews", systemImage: "square.and.pencil")
+                    }
                 
                 
                     .navigationViewStyle(.stack)
