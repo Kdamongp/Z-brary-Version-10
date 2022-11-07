@@ -18,44 +18,58 @@ struct ProcedureView: View {
                     .scaledToFit()
                 
                 VStack {
-                    Text("Library Procedures")
-                   
-                    HStack {
-                        Text("Step 1: Check-In")
-                        NavigationLink(destination: {
-                            ProcedureVideoView(videoFilename: "IMG_0089")
-                        }, label: {
-                            Image(systemName: "play.circle.fill")
-                        })
-                    }
-                    HStack {
-                        Text("Step 2: Choose a Book")
-                        NavigationLink(destination: {
-                            
-                        }, label: {
-                            Image(systemName: "play.circle.fill")
-                        })
-                    }
-                    HStack {
-                        Text("Step 3: Check-Out")
-                        NavigationLink(destination: {
-                            
-                        }, label: {
-                            Image(systemName: "play.circle.fill")
-                        })
-                    }
-                    HStack {
-                        Text("Step 4: Read Quietly")
-                        NavigationLink(destination: {
-                            
-                        }, label: {
-                            Image(systemName: "play.circle.fill")
-                        })
-                    }
-                    Image("Procedures")
+                    Image("procedures")
                         .resizable()
                         .scaledToFit()
-                        .padding(75)
+//                        .padding(75)
+                   
+                    HStack {
+                        Image("checkin")
+                            .resizable()
+                            .scaledToFit()
+//                            .padding(75)
+                        NavigationLink(destination: {
+                            ProcedureVideoView(videoFilename: "procedureVideo")
+                        }, label: {
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 42.0))
+                        })
+                    }
+                    HStack {
+                        Image("findabook")
+                            .resizable()
+                            .scaledToFit()
+//                            .padding(75)
+                        NavigationLink(destination: {
+                            
+                        }, label: {
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 42.0))
+                        })
+                    }
+                    HStack {
+                        Image("checkout")
+                            .resizable()
+                            .scaledToFit()
+//                            .padding(75)
+                        NavigationLink(destination: {
+                            
+                        }, label: {
+                            Image(systemName: "play.circle.fill")
+                                .font(.system(size: 42.0))
+                        })
+                    }
+                    HStack {
+                        Image("readquiet")
+                            .resizable()
+                            .scaledToFit()
+//                            .padding(75)
+//                        NavigationLink(destination: {
+//
+//                        }, label: {
+//                            Image(systemName: "play.circle.fill")
+//                        })
+                    }
                     Text("Add a Video Link")
                     
                     
